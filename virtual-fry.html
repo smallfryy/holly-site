@@ -54,7 +54,10 @@
         </div>
         <!-- /.container -->
     </nav>
+
+    <!-- scene -->
     <a-scene>
+
       <a-entity position="0 1.8 6">
         <a-camera id="camera">
           <a-cursor color="#4CC3D9"></a-cursor>
@@ -69,7 +72,17 @@
       </a-box>
 
       <a-image id="shadow" position="0 0 -2" src="../_images/radial-shadow-2.png" opacity="0.5" rotation="-90 0 0" scale="2 2 2"></a-image>
+
+
+      <a-sphere id="yellow-sphere" position="-5 5 -8" radius="2" color="yellow" roughness="0.8">
+        <a-event name="mouseenter" scale="2.5 1 1" color="#6ae2b3"></a-event>
+        <a-event name="mouseenter" target="#shadow" scale="2.5 2 2"></a-event>
+        <a-event name="mouseleave" scale="1 1 1" color="#ff5a5f"></a-event>
+        <a-event name="mouseleave" target="#shadow" scale="2 2 2"></a-event>
+      </a-sphere>
+      
       <a-sky src="#ffffff"></a-sky>
+
     </a-scene>
   </body>
 </html>
