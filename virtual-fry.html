@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+</html>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="works by programmer and artist holly peck" content="works by programmer and artist Holly Peck">
+    <meta name="Holly Peck" content="works by programmer and artist holly peck">
+
+    <title>Holly Peck</title>
+    <script src="vr/aframe.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,200' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/portfolio.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://holly-peck.com">Holly Peck</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="http://blog.holly-peck.com">Blog</a>
+                    <li>
+                        <a href="virtual-fry.html">Playground</a>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <a-scene>
+      <a-entity position="0 1.8 6">
+        <a-camera id="camera">
+          <a-cursor color="#4CC3D9"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-box id="red-cube" position="0 3.5 -2" rotation="30 30 0" width="2" depth="2" height="2" color="#ff5a5f" roughness="0.8">
+        <a-event name="mouseenter" scale="3 1 1" color="#6ae2b3"></a-event>
+        <a-event name="mouseenter" target="#shadow" scale="3 2 2"></a-event>
+        <a-event name="mouseleave" scale="1 1 1" color="#ff5a5f"></a-event>
+        <a-event name="mouseleave" target="#shadow" scale="2 2 2"></a-event>
+      </a-box>
+
+      <a-image id="shadow" position="0 0 -2" src="../_images/radial-shadow-2.png" opacity="0.5" rotation="-90 0 0" scale="2 2 2"></a-image>
+      <a-sky src="#ffffff"></a-sky>
+    </a-scene>
+  </body>
+</html>
